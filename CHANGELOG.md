@@ -7,6 +7,7 @@
         - Allow Open311 service definitions to include automated
           attributes #1986
         - Optionally supress blank Open311 update errors #1986
+        - Enable conversion from EPSG:27700 when fetching over Open311 #2028
     - Front end improvements:
         - Improve questionnaire process. #1939 #1998
         - Increase size of "sub map links" (hide pins, permalink, etc) #2003
