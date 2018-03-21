@@ -13,18 +13,34 @@
 </div>
 
 [% IF body.send_method == 'Email' OR body.send_method == '' %]
-<p>Along with most UK councils, [% body.name %] receives reports from
-FixMyStreet.com via email; you can see a full list of the email addresses we
-send reports to at the bottom of this page.
-
-<p>[% body.name %] is not currently taking advantage of
-FixMyStreet<sup>Pro</sup>, which removes the need for email, and submits
-reports directly into your CRM.
-
-<p>By integrating with FixMyStreet<sup>Pro</sup> you’ll provide your citizens
-and staff with one simple and efficient place to report and manage all of your
-non-emergency issues — reducing your customer service burden, and saving money
-from day one.
+<div class="dashboard-row">
+    <div class="dashboard-item dashboard-item--12">
+        <div class="healthcheck-unit healthcheck-unit--good">
+            <h3>Email delivery</h3>
+            <p>
+                Along with most UK councils, [% body.name %] receives reports
+                from FixMyStreet.com via email; you can see a full list of
+                the email addresses we send reports to at the bottom of this page.
+            </p>
+        </div>
+        <div class="healthcheck-unit healthcheck-unit--bad">
+            <h3>CRM integration</h3>
+            <p>
+                [% body.name %] is not currently taking advantage of
+                <a href="https://www.fixmystreet.com/pro">FixMyStreet Pro</a>,
+                which removes the need for email, and submits reports directly
+                into your CRM.
+            </p>
+            <p>
+                By integrating with FixMyStreet Pro you’ll provide your
+                citizens and staff with one simple and efficient place to
+                report and manage all of your non-emergency issues —
+                reducing your customer service burden, and saving money
+                from day one.
+            </p>
+        </div>
+    </div>
+</div>
 [% END %]
 
 <form method="GET">
@@ -135,34 +151,25 @@ from day one.
     </div>
 </div>
 
-<div class="dashboard-row">
-    <div class="dashboard-item dashboard-item--12">
-        <h2>Case Studies</h2>
+[% IF body.send_method == 'Email' OR body.send_method == '' %]
+<div class="dashboard-row dashboard-row--yellow">
+    <div class="dashboard-item dashboard-item--12 dashboard-fms-case-studies">
+        <h2 style="margin-bottom: 1em">How FixMyStreet Pro helps other councils</h2>
+        <div>
+            <a href="https://www.fixmystreet.com/pro/take-a-tour/oxfordshire/">
+                <small>Case study</small>
+                <h3>Oxfordshire County Council</h3>
+                <p>See how Oxfordshire save hundreds of thousands of pounds with an end to end FixMyStreet Pro service.</p>
+            </a>
+            <a href="https://www.fixmystreet.com/pro/take-a-tour/bristol/">
+                <small>Case study</small>
+                <h3>Bristol City Council</h3>
+                <p>Bristol have put FixMyStreet at the heart of their anti-litter campaign, and are involving many citizens in their work.</p>
+            </a>
+        </div>
     </div>
 </div>
-
-<div class="dashboard-row">
-    <div class="dashboard-item dashboard-item--6">
-        <h3 class="dashboard-subheading">Oxfordshire County Council</h3>
-        <p>See how Oxfordshire save hundreds of thousands of pounds with an end to end FixMyStreet<sup>Pro</sup> service.</p>
-    </div>
-    <div class="dashboard-item dashboard-item--6">
-        <h3 class="dashboard-subheading">Bristol City Council</h3>
-        <p>Bristol have put FixMyStreet at the heart of their anti-litter campaign, and are involving many citizens in their work.</p>
-    </div>
-</div>
-
-<div class="dashboard-row">
-    <div class="dashboard-item dashboard-item--4">
-        <p align="center">Book a callback to schedule a one-to-one demo</p>
-    </div>
-    <div class="dashboard-item dashboard-item--4">
-        <p align="center">Find out more — join one of our regular webinars</p>
-    </div>
-    <div class="dashboard-item dashboard-item--4">
-        <p align="center">Need information? Request our factsheets</p>
-    </div>
-</div>
+[% END %]
 
 <div class="dashboard-row">
     <div class="dashboard-item dashboard-item--12">
@@ -213,4 +220,25 @@ from day one.
     </div>
 </div>
 
-[% INCLUDE 'footer.html' pagefooter = 'yes' %]
+<div class="dashboard-row dashboard-row--yellow" style="text-align: center; margin-bottom: -1em;">
+    <div class="dashboard-item dashboard-item--4">
+        <h3 style="margin-top: 0;">Join one of our regular&nbsp;webinars</h3>
+        <a href="https://www.fixmystreet.com/pro/webinar-schedule/" class="btn">
+            Show webinar schedule
+        </a>
+    </div>
+    <div class="dashboard-item dashboard-item--4">
+        <h3 style="margin-top: 0;">Schedule a one-to-one demo</h3>
+        <a href="https://www.fixmystreet.com/pro/contact/" class="btn">
+            Request a callback
+        </a>
+    </div>
+    <div class="dashboard-item dashboard-item--4">
+        <h3 style="margin-top: 0;">See FixMyStreet Pro for&nbsp;yourself</h3>
+        <a href="https://demo.fixmystreet.com/" class="btn">
+            Try our live demo
+        </a>
+    </div>
+</div>
+
+[% INCLUDE 'footer.html' %]
